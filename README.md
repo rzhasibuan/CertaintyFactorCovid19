@@ -7,60 +7,65 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Implementasi Sistem Pakar Menggunakan Metode Certainty Factor Untuk Mendiagnosa Dini Corona Virus Desease (COVID-19)
+### cara install 
+```aidl
+// pertama 
+git clone CertaintyFactorCovid-19 
+```
+```aidl
+// kedua 
+// jalankan xampp jika penguna windows 
+// kemudian composer install untuk menginstall package
+composer install 
+```
+```aidl
+//ketiga
+// untuk menjalankan
+php artisan serve
+```
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+```aidl
+// kemudian jalankan 
+http://127.0.0.1:8000/covid19
+```
+```aidl
+// table gejala
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+G01* Pergi ke luar negeri yang terdampak COVID-19
+G02* Batuk kering
+G03* Berusia >50 tahun
+G04* Kelelahan
+G05* Demam dengan suhu lebih dari 38 derajat Celsius
+G06* Pernah kontak langsung dengan orang yang terinfeksi COVID-19
+G07* Sesak nafas
+G08 Hidung tersumbat
+G09* Tenggorokan sakit
+G10 Bersin-bersin
+G11* Sinar X pada paru-paru
+G12* Pernafasan cepat tak normal
+```
+```aidl
+// table status pasien
+ODP Orang Dalam Pemantauan (ODP)
+PDP Pasien Dalam Pengawasan (PDP)
+NON Non Suspect
+```
+```aidl
+// table rule
+1 IF G01 ANDG02 ANDG03 ANDG04 AND G05 ANDG06 ANDG07 ANDG09 ANDG11 ANDG12 THEN
+PDP
+2 IF G01 AND G02 AND G04 AND G05 THEN ODP
+3 IF G08 AND G10 THEN NON
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+```
 
-## Learning Laravel
+```aidl
+// rumus 
+CF(h,e)= MB(h,e)-MD(h,e) (1)
+CF(h,e1) = CF1 = C(e1) x (CF aturan 1) (2)
+CF(h,e2) = CF2 = C(e2) x (CF aturan 2) (3)
+CF kombinasi [CF1, CF2] = CF1 + CF2 (1- CF1) (4)
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-- **[Romega Software](https://romegasoftware.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+penulis : _**`https://github.com/rzhasibuan`**_
