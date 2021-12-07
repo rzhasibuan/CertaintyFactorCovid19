@@ -9,27 +9,27 @@
 
 ## Implementasi Sistem Pakar Menggunakan Metode Certainty Factor Untuk Mendiagnosa Dini Corona Virus Desease (COVID-19)
 ### cara install 
-```aidl
+```
 // pertama 
 git clone CertaintyFactorCovid-19 
 ```
-```aidl
+```
 // kedua 
 // jalankan xampp jika penguna windows 
 // kemudian composer install untuk menginstall package
 composer install 
 ```
-```aidl
+```
 //ketiga
 // untuk menjalankan
 php artisan serve
 ```
 
-```aidl
+```
 // kemudian jalankan 
 http://127.0.0.1:8000/covid19
 ```
-```aidl
+```
 // table gejala
 
 G01* Pergi ke luar negeri yang terdampak COVID-19
@@ -45,13 +45,13 @@ G10 Bersin-bersin
 G11* Sinar X pada paru-paru
 G12* Pernafasan cepat tak normal
 ```
-```aidl
+```
 // table status pasien
 ODP Orang Dalam Pemantauan (ODP)
 PDP Pasien Dalam Pengawasan (PDP)
 NON Non Suspect
 ```
-```aidl
+```
 // table rule
 1 IF G01 ANDG02 ANDG03 ANDG04 AND G05 ANDG06 ANDG07 ANDG09 ANDG11 ANDG12 THEN
 PDP
@@ -60,7 +60,7 @@ PDP
 
 ```
 
-```aidl
+```
 // rumus 
 CF(h,e)= MB(h,e)-MD(h,e) (1)
 CF(h,e1) = CF1 = C(e1) x (CF aturan 1) (2)
