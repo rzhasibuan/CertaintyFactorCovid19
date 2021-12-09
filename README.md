@@ -18,6 +18,9 @@ git clone CertaintyFactorCovid-19
 // jalankan xampp jika penguna windows 
 // kemudian composer install untuk menginstall package
 composer install 
+composer update 
+cp .env.example .env
+php artisan key:generate
 ```
 ```
 //ketiga
